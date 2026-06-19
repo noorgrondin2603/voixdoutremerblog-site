@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles · Voix d'Outre-Mer</title>
+<meta name="description" content="Tous les articles de Voix d'Outre-Mer : portraits d'artistes, histoire et culture, recherche et réflexions sur les musiques populaires caribéennes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">Voix <span>d'Outre-Mer</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">Qui suis-je</a></li>
+      <li><a href="recherche.html">Recherche</a></li>
+      <li><a href="vision.html">Vision</a></li>
+      <li><a href="ligne-editoriale.html">Ligne éditoriale</a></li>
+      <li><a href="articles.html" class="active">Articles</a></li>
+      <li><a href="#newsletter" class="btn btn-primary" style="padding:0.55em 1.3em;">S'abonner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
+  </nav>
+</header>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Publications</span>
+    <h1>Articles</h1>
+    <p>Portraits d'artistes, histoire et culture, recherche et réflexions — l'ensemble des
+    publications de Voix d'Outre-Mer, à retrouver sur Medium.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div id="articles-grid" class="grid grid-3">
+      <!-- chargement en cours -->
+      <div class="card" style="opacity:0.5; grid-column: 1 / -1; text-align:center; padding:48px;">
+        <p style="color:var(--text-muted);">Chargement des articles en cours…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  // Catégories inférées depuis les mots-clés du titre
+  function guessTag(title) {
+    const t = title.toLowerCase();
+    if (t.includes("portrait") || t.includes("pionnier") || t.includes("pionni")) return "Portrait d'un pionnier";
+    if (t.includes("shatta") || t.includes("dancehall") || t.includes("reggae") || t.includes("bouyon") || t.includes("rabòday") || t.includes("raboday") || t.includes("slackness") || t.includes("subversif") || t.includes("hypersexuali")) return "Recherche & réflexions";
+    if (t.includes("histoire") || t.includes("héritage") || t.includes("mémoire") || t.includes("riddim") || t.includes("gadé")) return "Histoire & culture";
+    return "Publication";
+  }
+
+  function truncate(text, max) {
+    if (!text) return "";
+    const clean = text.replace(/<[^>]*>/g, "").replace(/&[^;]+;/g, " ").trim();
+    return clean.length > max ? clean.slice(0, max).trimEnd() + "…" : clean;
+  }
+
+  function renderCards(items) {
+    const grid = document.getElementById("articles-grid");
+    if (!items.length) {
+      grid.innerHTML = '<p style="color:var(--text-muted); grid-column:1/-1; text-align:center;">Aucun article trouvé. Retrouvez toutes les publications directement sur <a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener">Medium</a>.</p>';
+      return;
+    }
+    grid.innerHTML = items.map(item => {
+      const tag = guessTag(item.title);
+      const desc = truncate(item.description || item.content || "", 140);
+      return `<div class="card article-card">
+        <span class="tag">${tag}</span>
+        <h3>${item.title}</h3>
+        <p>${desc}</p>
+        <a class="read-more" href="${item.link}" target="_blank" rel="noopener">Lire sur Medium →</a>
+      </div>`;
+    }).join("");
+  }
+
+  // Utilise rss2json (service public gratuit, CORS-friendly) pour lire le flux Medium
+  const RSS_URL = encodeURIComponent("https://medium.com/feed/@voixdoutremer");
+  const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${RSS_URL}&count=30`;
+
+  fetch(API_URL)
+    .then(r => r.json())
+    .then(data => {
+      if (data.status !== "ok" || !data.items) throw new Error("Flux indisponible");
+      renderCards(data.items);
+    })
+    .catch(() => {
+      // Fallback : articles codés en dur si le flux est inaccessible
+      const fallback = [
+        { title: "Madnick, la voix de Dillon et la mémoire du hip-hop martiniquais", link: "https://voixdoutremer.medium.com/madnick-la-voix-de-dillon-et-la-m%C3%A9moire-du-hip-hop-martiniquais-018bcceb68f0", description: "Le parcours de Nicolas Nelzi (Madnick), figure du hip-hop martiniquais." },
+        { title: "Le slackness entre Jamaïque et Martinique", link: "https://voixdoutremer.medium.com/le-slackness-entre-jama%C3%AFque-et-martinique-genre-corps-et-r%C3%A9sistance-postcoloniale-ba0560b4d5f0", description: "Genre, corps et résistance postcoloniale, du dancehall jamaïcain au shatta martiniquais." },
+        { title: "L'héritage de « Gadé Réalité A » dans la culture musicale martiniquaise", link: "https://voixdoutremer.medium.com/lh%C3%A9ritage-de-gad%C3%A9-r%C3%A9alit%C3%A9-a-dans-la-culture-musicale-martiniquaise-ab426f3c755e", description: "La continuité du refrain entre « Gadé Réalité A » (1995) et « Mwen an sa » (2025)." },
+        { title: "Mighty Ki La : l'underground comme ligne de conduite", link: "https://voixdoutremer.medium.com/portrait-dun-pionnier-f7498603dc2c", description: "Portrait d'un pionnier de la scène underground martiniquaise." },
+        { title: "Portrait d'un pionnier — Varsko Kidman", link: "https://voixdoutremer.medium.com/portrait-dun-pionnier-5a13c67d5f43", description: "Portrait d'un pionnier des musiques populaires martiniquaises, autour de « Pep La Lévé »." },
+        { title: "Portrait d'un pionnier — General Shizzle", link: "https://voixdoutremer.medium.com/portrait-dun-pionnier-e1400b9e4bd7", description: "Portrait d'un pionnier des musiques populaires martiniquaises." },
+        { title: "L'hypersexualisation, c'est quoi ?", link: "https://voixdoutremer.medium.com/lhypersexualisation-c-est-quoi-1a9496cee895", description: "Une réflexion sur l'hypersexualisation, qui concerne autant les femmes que les hommes." },
+        { title: "Le « EDF riddim » de DJ Vtrine", link: "https://voixdoutremer.medium.com/le-edf-riddim-de-dj-vtrine-a1fde85ee449", description: "Analyse d'un riddim emblématique de la production martiniquaise." },
+        { title: "Le shatta... c'est subversif ?", link: "https://voixdoutremer.medium.com/le-shatta-cest-subversif-c60105dc39f1", description: "Subversion, domination et production culturelle dans les sociétés postcoloniales." }
+      ];
+      renderCards(fallback);
+    });
+})();
+</script>
+
+
+<svg class="divider-wave" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 40" preserveAspectRatio="none" fill="currentColor">
+<rect x="0.00" y="5.77" width="5.00" height="28.46" rx="1" />
+<rect x="10.00" y="15.60" width="5.00" height="8.80" rx="1" />
+<rect x="20.00" y="11.60" width="5.00" height="16.80" rx="1" />
+<rect x="30.00" y="12.43" width="5.00" height="15.14" rx="1" />
+<rect x="40.00" y="4.22" width="5.00" height="31.57" rx="1" />
+<rect x="50.00" y="5.17" width="5.00" height="29.65" rx="1" />
+<rect x="60.00" y="1.73" width="5.00" height="36.55" rx="1" />
+<rect x="70.00" y="14.61" width="5.00" height="10.78" rx="1" />
+<rect x="80.00" y="9.25" width="5.00" height="21.50" rx="1" />
+<rect x="90.00" y="15.52" width="5.00" height="8.95" rx="1" />
+<rect x="100.00" y="12.50" width="5.00" height="15.00" rx="1" />
+<rect x="110.00" y="7.91" width="5.00" height="24.17" rx="1" />
+<rect x="120.00" y="15.58" width="5.00" height="8.85" rx="1" />
+<rect x="130.00" y="12.82" width="5.00" height="14.36" rx="1" />
+<rect x="140.00" y="5.60" width="5.00" height="28.80" rx="1" />
+<rect x="150.00" y="7.28" width="5.00" height="25.44" rx="1" />
+<rect x="160.00" y="12.47" width="5.00" height="15.05" rx="1" />
+<rect x="170.00" y="6.57" width="5.00" height="26.86" rx="1" />
+<rect x="180.00" y="3.05" width="5.00" height="33.90" rx="1" />
+<rect x="190.00" y="15.90" width="5.00" height="8.21" rx="1" />
+<rect x="200.00" y="3.11" width="5.00" height="33.79" rx="1" />
+<rect x="210.00" y="4.83" width="5.00" height="30.34" rx="1" />
+<rect x="220.00" y="10.56" width="5.00" height="18.89" rx="1" />
+<rect x="230.00" y="13.51" width="5.00" height="12.98" rx="1" />
+<rect x="240.00" y="0.68" width="5.00" height="38.63" rx="1" />
+<rect x="250.00" y="10.61" width="5.00" height="18.77" rx="1" />
+<rect x="260.00" y="14.52" width="5.00" height="10.97" rx="1" />
+<rect x="270.00" y="14.45" width="5.00" height="11.09" rx="1" />
+<rect x="280.00" y="2.44" width="5.00" height="35.12" rx="1" />
+<rect x="290.00" y="6.34" width="5.00" height="27.32" rx="1" />
+<rect x="300.00" y="3.09" width="5.00" height="33.83" rx="1" />
+<rect x="310.00" y="4.32" width="5.00" height="31.35" rx="1" />
+<rect x="320.00" y="7.42" width="5.00" height="25.16" rx="1" />
+<rect x="330.00" y="0.43" width="5.00" height="39.14" rx="1" />
+<rect x="340.00" y="9.94" width="5.00" height="20.11" rx="1" />
+<rect x="350.00" y="7.17" width="5.00" height="25.67" rx="1" />
+<rect x="360.00" y="2.73" width="5.00" height="34.54" rx="1" />
+<rect x="370.00" y="6.10" width="5.00" height="27.79" rx="1" />
+<rect x="380.00" y="2.21" width="5.00" height="35.57" rx="1" />
+<rect x="390.00" y="6.76" width="5.00" height="26.48" rx="1" />
+<rect x="400.00" y="4.73" width="5.00" height="30.55" rx="1" />
+<rect x="410.00" y="15.27" width="5.00" height="9.47" rx="1" />
+<rect x="420.00" y="12.35" width="5.00" height="15.29" rx="1" />
+<rect x="430.00" y="11.37" width="5.00" height="17.26" rx="1" />
+<rect x="440.00" y="14.72" width="5.00" height="10.55" rx="1" />
+<rect x="450.00" y="12.28" width="5.00" height="15.45" rx="1" />
+<rect x="460.00" y="14.38" width="5.00" height="11.23" rx="1" />
+<rect x="470.00" y="11.55" width="5.00" height="16.90" rx="1" />
+<rect x="480.00" y="5.83" width="5.00" height="28.34" rx="1" />
+<rect x="490.00" y="10.16" width="5.00" height="19.67" rx="1" />
+<rect x="500.00" y="10.08" width="5.00" height="19.85" rx="1" />
+<rect x="510.00" y="12.65" width="5.00" height="14.70" rx="1" />
+<rect x="520.00" y="11.73" width="5.00" height="16.54" rx="1" />
+<rect x="530.00" y="1.01" width="5.00" height="37.97" rx="1" />
+<rect x="540.00" y="5.63" width="5.00" height="28.74" rx="1" />
+<rect x="550.00" y="6.25" width="5.00" height="27.49" rx="1" />
+<rect x="560.00" y="13.26" width="5.00" height="13.48" rx="1" />
+<rect x="570.00" y="4.33" width="5.00" height="31.33" rx="1" />
+<rect x="580.00" y="13.39" width="5.00" height="13.23" rx="1" />
+<rect x="590.00" y="9.93" width="5.00" height="20.14" rx="1" />
+<rect x="600.00" y="0.17" width="5.00" height="39.66" rx="1" />
+<rect x="610.00" y="5.76" width="5.00" height="28.48" rx="1" />
+<rect x="620.00" y="7.09" width="5.00" height="25.82" rx="1" />
+<rect x="630.00" y="5.05" width="5.00" height="29.91" rx="1" />
+<rect x="640.00" y="2.51" width="5.00" height="34.97" rx="1" />
+<rect x="650.00" y="3.58" width="5.00" height="32.83" rx="1" />
+<rect x="660.00" y="12.34" width="5.00" height="15.33" rx="1" />
+<rect x="670.00" y="15.49" width="5.00" height="9.03" rx="1" />
+<rect x="680.00" y="10.95" width="5.00" height="18.09" rx="1" />
+<rect x="690.00" y="11.72" width="5.00" height="16.57" rx="1" />
+<rect x="700.00" y="12.62" width="5.00" height="14.75" rx="1" />
+<rect x="710.00" y="0.91" width="5.00" height="38.17" rx="1" />
+<rect x="720.00" y="1.98" width="5.00" height="36.04" rx="1" />
+<rect x="730.00" y="10.97" width="5.00" height="18.07" rx="1" />
+<rect x="740.00" y="5.51" width="5.00" height="28.97" rx="1" />
+<rect x="750.00" y="9.67" width="5.00" height="20.66" rx="1" />
+<rect x="760.00" y="1.37" width="5.00" height="37.27" rx="1" />
+<rect x="770.00" y="8.66" width="5.00" height="22.68" rx="1" />
+<rect x="780.00" y="11.76" width="5.00" height="16.48" rx="1" />
+<rect x="790.00" y="12.05" width="5.00" height="15.89" rx="1" />
+</svg>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Toutes les publications sur Medium</h2>
+      <p class="lede" style="margin:0 auto 20px;">Retrouvez l'ensemble des articles, dans leur
+      version complète, sur le blog Voix d'Outre-Mer.</p>
+      <a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener" class="btn btn-primary">voixdoutremer.medium.com</a>
+    </div>
+  </div>
+</section>
+<section class="section section-tight" id="newsletter">
+  <div class="container">
+    <div class="newsletter">
+      <span class="eyebrow" style="color:var(--terracotta);">Newsletter</span>
+      <h2>Recevez les nouvelles publications</h2>
+      <p>Portraits d'artistes, articles de fond et coulisses de la recherche sur les musiques populaires
+      des Outre-mer — directement dans votre boîte mail, sans algorithme entre nous.</p>
+
+      <!-- Formulaire d'inscription : à connecter à votre service de newsletter
+           (voir notes de configuration fournies séparément). -->
+      <form class="newsletter-form" method="post" action="#" target="_blank">
+        <input type="email" name="email" placeholder="Votre adresse e-mail" required aria-label="Adresse e-mail">
+        <button type="submit" class="btn btn-primary">S'abonner</button>
+      </form>
+      <p class="newsletter-note">Pas de spam, désinscription en un clic à tout moment.</p>
+    </div>
+  </div>
+</section>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Voix d'Outre-Mer</h4>
+        <p style="opacity:0.8; max-width:320px;">Le média qui donne la voix aux musiques et cultures
+        des Outre-mer : histoire, reggae, dancehall, shatta et recherche doctorale.</p>
+        <ul class="footer-links" style="margin-top:14px;">
+          <li><a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="https://www.instagram.com/voixdoutre_mer" target="_blank" rel="noopener">Instagram — Voix d'Outre-Mer</a></li>
+          <li><a href="https://www.instagram.com/norah_doctorante" target="_blank" rel="noopener">Instagram — @norah_doctorante</a></li>
+          <li><a href="https://youtube.com/@voixdoutre_mer" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">Qui suis-je</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="ligne-editoriale.html">Ligne éditoriale</a></li>
+          <li><a href="articles.html">Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:norahdoctorante@gmail.com">norahdoctorante@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn — Noor-Sharina Grondin</a></li>
+          <li><a href="https://www.researchgate.net/profile/Noor-Sharina-Grondin" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Noor-Sharina Grondin — Voix d'Outre-Mer. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

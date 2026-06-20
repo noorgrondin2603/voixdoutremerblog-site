@@ -199,11 +199,14 @@
         </div>`).join("");
     })
     .catch(() => {
-      document.getElementById("latest-articles").innerHTML = `
-        <div class="card article-card" style="grid-column:1/-1; text-align:center;">
-          <p style="color:var(--text-muted);">Retrouvez nos derniers articles directement sur
-          <a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener">Medium</a>.</p>
-        </div>`;
+      const items = [
+        { title: "Portrait d'un pionnier — Vlg Rocki : la liberté comme ligne de conduite", link: "https://voixdoutremer.medium.com/portrait-dun-pionnier-c43e130f510e", tag: "Portrait d'un pionnier", desc: "Artiste indépendant, producteur et ingénieur du son, Vlg Rocki trace depuis 2008 une ligne de conduite unique dans le shatta martiniquais." },
+        { title: "Le bouyon, d'une île à l'autre : histoire d'une musique caribéenne en mouvement", link: "https://voixdoutremer.medium.com/le-bouyon-dune-%C3%AEle-%C3%A0-l-autre-histoire-d-une-musique-carib%C3%A9enne-en-mouvement-168dce976870", tag: "Histoire & culture", desc: "De la Dominique à la Guadeloupe, l'histoire d'un genre musical caribéen qui a traversé les frontières et les générations." },
+        { title: "Madnick, la voix de Dillon et la mémoire du hip-hop martiniquais", link: "https://voixdoutremer.medium.com/madnick-la-voix-de-dillon-et-la-m%C3%A9moire-du-hip-hop-martiniquais-018bcceb68f0", tag: "Portrait d'un pionnier", desc: "Le parcours de Nicolas Nelzi (Madnick), figure du hip-hop martiniquais." }
+      ];
+      document.getElementById("latest-articles").innerHTML = items.map(i =>
+        `<div class="card article-card"><span class="tag">${i.tag}</span><h3>${i.title}</h3><p>${i.desc}</p><a class="read-more" href="${i.link}" target="_blank" rel="noopener">Lire sur Medium →</a></div>`
+      ).join("");
     });
 })();
 </script>

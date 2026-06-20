@@ -53,7 +53,8 @@
   function guessTag(title) {
     const t = title.toLowerCase();
     if (t.includes("portrait") || t.includes("pionnier") || t.includes("pionni")) return "Portrait d'un pionnier";
-    if (t.includes("shatta") || t.includes("dancehall") || t.includes("reggae") || t.includes("bouyon") || t.includes("rabòday") || t.includes("raboday") || t.includes("slackness") || t.includes("subversif") || t.includes("hypersexuali")) return "Recherche & réflexions";
+    if (t.includes("bouyon")) return "Histoire & culture";
+    if (t.includes("shatta") || t.includes("dancehall") || t.includes("reggae") || t.includes("rabòday") || t.includes("raboday") || t.includes("slackness") || t.includes("subversif") || t.includes("hypersexuali")) return "Recherche & réflexions";
     if (t.includes("histoire") || t.includes("héritage") || t.includes("mémoire") || t.includes("riddim") || t.includes("gadé")) return "Histoire & culture";
     return "Publication";
   }
@@ -95,6 +96,8 @@
     .catch(() => {
       // Fallback : articles codés en dur si le flux est inaccessible
       const fallback = [
+        { title: "Portrait d'un pionnier — Vlg Rocki : la liberté comme ligne de conduite", link: "https://voixdoutremer.medium.com/portrait-dun-pionnier-c43e130f510e", description: "Artiste, producteur et ingénieur du son indépendant, Vlg Rocki trace depuis 2008 une ligne de conduite unique dans le shatta martiniquais : liberté de parole, conscience sociale et ancrage dans le quartier Volga-Plage." },
+        { title: "Le bouyon, d'une île à l'autre : histoire d'une musique caribéenne en mouvement", link: "https://voixdoutremer.medium.com/le-bouyon-dune-%C3%AEle-%C3%A0-l-autre-histoire-d-une-musique-carib%C3%A9enne-en-mouvement-168dce976870", description: "De la Dominique à la Guadeloupe, l'histoire d'un genre musical caribéen qui a traversé les frontières, les controverses et les générations pour devenir un phénomène régional." },
         { title: "Madnick, la voix de Dillon et la mémoire du hip-hop martiniquais", link: "https://voixdoutremer.medium.com/madnick-la-voix-de-dillon-et-la-m%C3%A9moire-du-hip-hop-martiniquais-018bcceb68f0", description: "Le parcours de Nicolas Nelzi (Madnick), figure du hip-hop martiniquais." },
         { title: "Le slackness entre Jamaïque et Martinique", link: "https://voixdoutremer.medium.com/le-slackness-entre-jama%C3%AFque-et-martinique-genre-corps-et-r%C3%A9sistance-postcoloniale-ba0560b4d5f0", description: "Genre, corps et résistance postcoloniale, du dancehall jamaïcain au shatta martiniquais." },
         { title: "L'héritage de « Gadé Réalité A » dans la culture musicale martiniquaise", link: "https://voixdoutremer.medium.com/lh%C3%A9ritage-de-gad%C3%A9-r%C3%A9alit%C3%A9-a-dans-la-culture-musicale-martiniquaise-ab426f3c755e", description: "La continuité du refrain entre « Gadé Réalité A » (1995) et « Mwen an sa » (2025)." },

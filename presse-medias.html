@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presse & médias · Voix d'Outre-Mer</title>
+<meta name="description" content="Les interventions médiatiques de Noor-Sharina Grondin : France Inter, France Télévisions, documentaires — une expertise reconnue sur les musiques populaires caribéennes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .media-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px -18px rgba(28,45,79,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .media-card-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    background: var(--cream-dark);
+  }
+  .media-card-thumb-placeholder {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .media-card-thumb-placeholder .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .media-card-thumb-placeholder .logo-sub {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--cream);
+    opacity: 0.7;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .media-card-body {
+    padding: 24px 28px 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  .media-card-body .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta-dark);
+    background: var(--cream-dark);
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
+  .media-card-body h3 {
+    margin-bottom: 8px;
+    font-size: 1.15rem;
+  }
+  .media-card-body .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .media-card-body p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 18px;
+  }
+  .media-card-body .role-tag {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 4px 12px;
+    margin-bottom: 16px;
+    width: fit-content;
+  }
+  @media (max-width: 880px) {
+    .grid-3 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo">Voix <span>d'Outre-Mer</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="a-propos.html">Qui suis-je</a></li>
+      <li><a href="recherche.html">Recherche</a></li>
+      <li><a href="vision.html">Vision</a></li>
+      <li><a href="ligne-editoriale.html">Ligne éditoriale</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="presse-medias.html" class="active">Presse & médias</a></li>
+      <li><a href="#newsletter" class="btn btn-primary" style="padding:0.55em 1.3em;">S'abonner</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">&#9776;</button>
+  </nav>
+</header>
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Presse & médias</span>
+    <h1>Interventions médiatiques</h1>
+    <p>Invitée sur France Inter, France Télévisions et dans des productions documentaires,
+    Noor-Sharina Grondin partage son expertise sur les musiques populaires caribéennes,
+    le shatta et les cultures ultramarines.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-3">
+
+      <!-- CARTE 1 — France Inter / Zoom Zoom Zen -->
+      <div class="media-card">
+        <div class="media-card-thumb-placeholder">
+          <div class="logo-text">France Inter</div>
+          <div class="logo-sub">Radio nationale</div>
+        </div>
+        <div class="media-card-body">
+          <span class="badge">Radio · Janvier 2026</span>
+          <span class="role-tag">Invitée</span>
+          <h3>Zoom Zoom Zen — Le shatta et les musiques populaires caribéennes</h3>
+          <p class="meta">France Inter · Émission présentée par Matthieu Noël · 29 janvier 2026</p>
+          <p>Invitée de l'émission <em>Zoom Zoom Zen</em> sur France Inter pour un échange
+          autour du shatta, des musiques populaires caribéennes et de leurs enjeux sociaux,
+          culturels et identitaires dans les sociétés antillaises contemporaines.</p>
+          <a href="https://www.radiofrance.fr/franceinter/podcasts/zoom-zoom-zen/zoom-zoom-zen-du-jeudi-29-janvier-2026-3127434"
+             target="_blank" rel="noopener" class="btn btn-outline">
+            Écouter le podcast →
+          </a>
+        </div>
+      </div>
+
+      <!-- CARTE 2 — France Télévisions / Outre-mer et si on bougeait les lignes -->
+      <div class="media-card">
+        <div class="media-card-thumb-placeholder" style="background: var(--navy-light);">
+          <div class="logo-text">France Télévisions</div>
+          <div class="logo-sub">La 1ère · Outre-mer</div>
+        </div>
+        <div class="media-card-body">
+          <span class="badge">Télévision · Mai 2026</span>
+          <span class="role-tag">Invitée plateau</span>
+          <h3>Outre-mer, et si on bougeait les lignes ? — Panorama des musiques des Outre-mer</h3>
+          <p class="meta">France Télévisions / La 1ère · Mai 2026</p>
+          <p>Invitée en plateau du magazine d'information <em>Outre-mer, et si on bougeait
+          les lignes ?</em> aux côtés de Bertrand Dicale (journaliste et critique musical) et
+          Jean-Claude Naimro (compositeur, membre de Kassav'). L'émission aborde les enjeux de
+          structuration des filières ultramarines, la visibilité médiatique des artistes et
+          le rayonnement international des musiques d'Outre-mer.</p>
+          <a href="https://www.france.tv/la1ere/outre-mer-et-si-on-bougeait-les-lignes/8415405-panorama-des-musiques-des-outre-mer.html"
+             target="_blank" rel="noopener" class="btn btn-outline">
+            Voir l'émission →
+          </a>
+        </div>
+      </div>
+
+      <!-- CARTE 3 — France 3 / Documentaire Shatta -->
+      <div class="media-card">
+        <div class="media-card-thumb-placeholder" style="background: #2E4267;">
+          <div class="logo-text">France 3 · La 1ère</div>
+          <div class="logo-sub">Documentaire · 52 min</div>
+        </div>
+        <div class="media-card-body">
+          <span class="badge">Documentaire · Juin 2026</span>
+          <span class="role-tag">Consultante scientifique</span>
+          <h3>Shatta, une génération, deux notes</h3>
+          <p class="meta">France 3 / La 1ère / france.tv · Diffusé le 22 juin 2026 à 23h40 ·
+          Réal. Léa Mormin-Chauvac & Malo Delarue · Production : Une prod à soi</p>
+          <p>Documentaire de 52 minutes retraçant la naissance et l'évolution du shatta
+          martiniquais — genre musical issu du dancehall, devenu un phénomène incontournable
+          dans toute la Caraïbe. Noor-Sharina Grondin y intervient comme consultante
+          scientifique, apportant son expertise historique et académique sur les origines
+          et les enjeux sociaux du genre.</p>
+          <a href="https://www.france.tv/la1ere/guadeloupe/soiree-horizons/8550290-shatta-une-generation-deux-notes.html"
+             target="_blank" rel="noopener" class="btn btn-outline">
+            Voir le documentaire →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Une expertise disponible pour vos projets</h2>
+      <p class="lede" style="margin:0 auto 20px;">Consultance scientifique pour des productions
+      audiovisuelles, participations à des émissions ou des événements culturels, conférences
+      et interventions publiques sur les musiques populaires caribéennes et ultramarines.</p>
+      <a href="mailto:norahdoctorante@gmail.com" class="btn btn-primary">Prendre contact</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tight" id="newsletter">
+  <div class="container">
+    <div class="newsletter">
+      <span class="eyebrow" style="color:var(--terracotta);">Newsletter</span>
+      <h2>Recevez les nouvelles publications</h2>
+      <p>Portraits d'artistes, articles de fond et coulisses de la recherche sur les musiques
+      populaires des Outre-mer — directement dans votre boîte mail, sans algorithme entre nous.</p>
+      <form class="newsletter-form" method="post" action="#" target="_blank">
+        <input type="email" name="email" placeholder="Votre adresse e-mail" required aria-label="Adresse e-mail">
+        <button type="submit" class="btn btn-primary">S'abonner</button>
+      </form>
+      <p class="newsletter-note">Pas de spam, désinscription en un clic à tout moment.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Voix d'Outre-Mer</h4>
+        <p style="opacity:0.8; max-width:320px;">Le média qui donne la voix aux musiques et cultures
+        des Outre-mer : histoire, reggae, dancehall, shatta et recherche doctorale.</p>
+        <ul class="footer-links" style="margin-top:14px;">
+          <li><a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="https://www.instagram.com/voixdoutre_mer" target="_blank" rel="noopener">Instagram — Voix d'Outre-Mer</a></li>
+          <li><a href="https://www.instagram.com/norah_doctorante" target="_blank" rel="noopener">Instagram — @norah_doctorante</a></li>
+          <li><a href="https://youtube.com/@voixdoutre_mer" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="a-propos.html">Qui suis-je</a></li>
+          <li><a href="recherche.html">Recherche</a></li>
+          <li><a href="vision.html">Vision</a></li>
+          <li><a href="ligne-editoriale.html">Ligne éditoriale</a></li>
+          <li><a href="articles.html">Articles</a></li>
+          <li><a href="presse-medias.html">Presse & médias</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-links">
+          <li><a href="mailto:norahdoctorante@gmail.com">norahdoctorante@gmail.com</a></li>
+          <li><a href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn — Noor-Sharina Grondin</a></li>
+          <li><a href="https://www.researchgate.net/profile/Noor-Sharina-Grondin" target="_blank" rel="noopener">ResearchGate</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Noor-Sharina Grondin — Voix d'Outre-Mer. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

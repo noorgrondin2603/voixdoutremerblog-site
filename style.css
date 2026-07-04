@@ -374,8 +374,11 @@ td.muted { color: var(--text-muted); }
 }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 32px;
+}
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 .footer-grid h4 { color: var(--white); font-size: 1rem; margin-bottom: 0.8em; }
 .footer-grid a { color: var(--cream); opacity: 0.8; }

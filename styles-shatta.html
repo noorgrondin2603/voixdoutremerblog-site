@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Les styles du shatta martiniquais — Voix d'Outre-Mer</title>
+<meta name="description" content="Une typologie du shatta martiniquais en six registres non exclusifs, illustrée par des exemples de discographie — recherche doctorale, Voix d'Outre-Mer.">
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/ibm-plex/6.4.0/css/ibm-plex.min.css');
+
+  :root{
+    --navy:#152238;
+    --navy-2:#1F3252;
+    --cream:#F5EFE0;
+    --cream-2:#EDE4CE;
+    --terracotta:#BE5B31;
+    --terracotta-2:#8F4322;
+    --sauge:#556B4F;
+    --sable:#C9B688;
+    --ink:#241F17;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream); color:var(--ink);
+    font-family: Calibri, 'Segoe UI', 'IBM Plex Sans', sans-serif; line-height:1.55;
+  }
+  .mono{ font-family:'IBM Plex Mono','Courier New',monospace; letter-spacing:0.02em; }
+  h1,h2,h3{ font-family:Georgia,'Times New Roman',serif; margin:0; color:var(--navy); }
+
+  .masthead{
+    background: radial-gradient(circle at 85% -10%, rgba(190,91,49,0.35), transparent 45%), linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    color:var(--cream); padding:64px 8vw 48px; position:relative; overflow:hidden;
+  }
+  .masthead::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
+    background:repeating-linear-gradient(90deg, var(--terracotta) 0 28px, var(--sauge) 28px 56px, var(--sable) 56px 84px);
+    opacity:0.9;
+  }
+  .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--sable); margin-bottom:18px; }
+  .masthead h1{ color:var(--cream); font-size:clamp(32px,4.4vw,54px); line-height:1.08; max-width:16ch; }
+  .masthead .sub{ max-width:680px; margin-top:20px; font-size:16px; color:rgba(245,239,224,0.85); }
+  .backlink{ display:inline-block; margin-top:26px; font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--sable); text-decoration:none; border:1px solid rgba(201,182,136,0.4); padding:7px 14px; border-radius:2px;}
+  .backlink:hover{ background:rgba(201,182,136,0.12); }
+
+  section{ padding:52px 8vw; border-bottom:1px solid rgba(36,31,23,0.08); }
+  .section-note{ max-width:760px; color:rgba(36,31,23,0.72); font-size:14.5px; margin:6px 0 34px; }
+
+  .type-grid{ display:grid; grid-template-columns: repeat(2,1fr); gap:22px; }
+  @media(max-width:800px){ .type-grid{ grid-template-columns:1fr; } }
+
+  .type-card{ background:#fff; border:1px solid rgba(36,31,23,0.08); border-radius:8px; overflow:hidden; }
+  .type-head{ padding:18px 22px; color:var(--cream); }
+  .type-head h3{ color:var(--cream); font-size:19px; }
+  .type-head p{ margin:4px 0 0; font-size:12.5px; opacity:0.9; }
+  .type-body{ padding:18px 22px; }
+  .type-body p{ font-size:13.8px; color:rgba(36,31,23,0.82); margin:0 0 12px; }
+  .example{ border-left:3px solid var(--sable); padding-left:12px; margin-top:10px; }
+  .example .titre{ font-family:Georgia,serif; font-style:italic; color:var(--navy); font-size:14.5px; }
+  .example .artiste{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--terracotta-2); margin-top:2px; }
+
+  .polysemie{ background:var(--cream-2); border:1px dashed var(--sable); border-radius:6px; padding:24px 28px; margin-top:8px; }
+  .polysemie h3{ font-family:'IBM Plex Mono',monospace; font-size:13px; text-transform:uppercase; letter-spacing:0.05em; color:var(--terracotta-2); margin-bottom:12px; }
+
+  .closing{ background:linear-gradient(180deg, var(--navy) 0%, #0F1A2C 100%); color:var(--cream); padding:48px 8vw 36px; }
+  .closing h2{ color:var(--cream); font-size:22px; margin-bottom:12px; }
+  .closing p{ font-size:14px; color:rgba(245,239,224,0.85); max-width:680px; }
+  .footer-note{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:rgba(245,239,224,0.6); line-height:1.7; border-top:1px solid rgba(245,239,224,0.15); padding-top:18px; margin-top:26px; }
+  .watermark{ text-align:right; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(245,239,224,0.4); margin-top:8px; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">Recherche doctorale · Voix d'Outre-Mer</div>
+  <h1>Les styles du shatta<br>six registres, pas une seule couleur</h1>
+  <p class="sub">Depuis 2012, le shatta martiniquais s'est diversifié en plusieurs registres non exclusifs. Un même artiste peut passer de l'un à l'autre, parfois dans la même année — cette page en donne un aperçu, illustré par des exemples de discographie.</p>
+  <a class="backlink" href="pionniers-shatta.html">← Voir aussi : les pionniers du shatta (2008–2017)</a>
+</header>
+
+<section>
+  <h2>Une typologie en six registres</h2>
+  <p class="section-note">Ces catégories ne s'excluent pas entre elles : un même titre, un même artiste, peut relever de plusieurs registres à la fois.</p>
+
+  <div class="type-grid">
+
+    <div class="type-card">
+      <div class="type-head" style="background:#C17B4E;">
+        <h3>Festif / délire</h3>
+        <p>Le registre dominant, cœur quantitatif du genre</p>
+      </div>
+      <div class="type-body">
+        <p>Tourné vers la fête, la soirée, le plaisir collectif — c'est le registre d'origine du shatta, celui qui domine la production depuis les débuts du genre.</p>
+        <div class="example">
+          <div class="titre">« Medley Walpix 2 »</div>
+          <div class="artiste">Magic feat Magic, Elji, Toupi, J-Max — 2012</div>
+          <div class="artiste"><a href="https://www.youtube.com/watch?v=-iADI-GatLg" target="_blank" rel="noopener" style="color:var(--terracotta);">▶ Voir sur YouTube</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-head" style="background:#7BBDAE;">
+        <h3>Conscient</h3>
+        <p>Critique sociale, politique, identitaire</p>
+      </div>
+      <div class="type-body">
+        <p>Aborde la mémoire, la colonialité, la condition martiniquaise — porté notamment par des figures comme Ti Blica et Politik Naï.</p>
+        <div class="example">
+          <div class="titre">Message d'apaisement face à la violence</div>
+          <div class="artiste">PSK, beatmaker — entretien, corpus 2024–2025</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-head" style="background:var(--terracotta);">
+        <h3>Militant</h3>
+        <p>Engagement social explicite</p>
+      </div>
+      <div class="type-body">
+        <p>Chlordécone, vie chère, néocolonialisme : un registre d'engagement direct, qui interpelle plutôt qu'il ne divertit.</p>
+        <div class="example">
+          <div class="titre">« Pep La Lévé »</div>
+          <div class="artiste">Varsko — appel inspiré de la figure de Delacroix, 2024</div>
+          <div class="artiste"><a href="https://soundcloud.com/varsko972/varsko-kidman-pep-la-le-ve" target="_blank" rel="noopener" style="color:var(--terracotta);">▶ Écouter sur SoundCloud</a> <span style="color:rgba(36,31,23,0.5); font-style:italic;">(non retrouvé sur YouTube)</span></div>
+        </div>
+        <div class="example">
+          <div class="titre">« Mafia »</div>
+          <div class="artiste">Dj Chinwax — registre identitaire et néocolonial</div>
+          <div class="artiste" style="color:rgba(36,31,23,0.5); font-style:italic;">Lien vidéo non retrouvé à ce stade</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-head" style="background:#9B7FB6;">
+        <h3>Féministe</h3>
+        <p>Corps, indépendance, subversion</p>
+      </div>
+      <div class="type-body">
+        <p>Porté par une génération d'artistes femmes qui reprennent la parole sur leur corps et leur indépendance.</p>
+        <div class="example">
+          <div class="titre">« Ding Dong »</div>
+          <div class="artiste">Cécinelle ft. Dj Glad — 22 février 2025 : « son corps n'est pas à vendre »</div>
+          <div class="artiste"><a href="https://www.youtube.com/watch?v=7oZw5NIMfZU" target="_blank" rel="noopener" style="color:var(--terracotta);">▶ Voir sur YouTube</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-head" style="background:#D4685E;">
+        <h3>Slackness</h3>
+        <p>Registre cru, catégorie disputée</p>
+      </div>
+      <div class="type-body">
+        <p>Sexualité explicite et provocation — un registre emprunté au vocabulaire du dancehall jamaïcain, dont la légitimité fait débat jusque chez les artistes eux-mêmes.</p>
+        <div class="example">
+          <div class="titre">« PoumPoumBamBam »</div>
+          <div class="artiste">Magic feat Magic — 2011, pionnier du registre explicite (instru Dj Glad)</div>
+          <div class="artiste"><a href="https://www.youtube.com/watch?v=zr_EOU9TgwI" target="_blank" rel="noopener" style="color:var(--terracotta);">▶ Voir sur YouTube</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="type-card">
+      <div class="type-head" style="background:#6B9BB5;">
+        <h3>Fusion</h3>
+        <p>Hybridations numériques, post-2015</p>
+      </div>
+      <div class="type-body">
+        <p>Trap, pop, gospel, love — le shatta dialogue avec d'autres genres portés par la diaspora et les plateformes numériques.</p>
+        <div class="example">
+          <div class="titre">« Dillon »</div>
+          <div class="artiste">Danthology — registre amoureux, ancrage territorial</div>
+          <div class="artiste"><a href="https://www.youtube.com/watch?v=OyKSS5SC85I" target="_blank" rel="noopener" style="color:var(--terracotta);">▶ Voir sur YouTube</a></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="polysemie">
+    <h3>Un même artiste, plusieurs registres</h3>
+    <p style="font-size:14px; color:rgba(36,31,23,0.85); margin:0;">En 2024, Varsko sort la même année « Bel Frakti » — un titre de slackness comique — et « Pep La Lévé » — un appel révolutionnaire inspiré de la figure de Delacroix. Ce double registre n'est pas une contradiction pour lui : c'est la preuve qu'aucun artiste du shatta ne se laisse enfermer dans une seule case.</p>
+  </div>
+</section>
+
+<div class="closing">
+  <h2>Une typologie vivante, pas figée</h2>
+  <p>Ces six registres ne sont qu'un point d'entrée : ils évoluent avec le genre lui-même, et un même morceau peut légitimement appartenir à plusieurs catégories à la fois.</p>
+  <div class="footer-note">
+    SOURCES · Corpus doctoral d'entretiens (2024–2025), Grondin N.-S. · discographies d'artistes.<br>
+    Issu de la thèse en cours : « Le shatta en Martinique : genre, jeunesse et inégalités raciales dans une société postcoloniale (2008–2025) »<br><br>
+    Pour citer cette page : Grondin, Noor-Sharina. « Les styles du shatta martiniquais ». <i>Voix d'Outre-Mer</i>, 2026.<br><br>
+    © 2026 Noor-Sharina Grondin — Tous droits réservés. Toute reproduction, totale ou partielle, est interdite sans autorisation écrite préalable de l'autrice.
+    <div class="watermark">Noor-Sharina Grondin</div>
+  </div>
+</div>
+
+</body>
+</html>

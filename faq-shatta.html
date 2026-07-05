@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Le shatta en questions — Voix d'Outre-Mer</title>
+<meta name="description" content="Foire aux questions sur le shatta martiniquais : idées reçues, lexique, repères essentiels — recherche doctorale, Voix d'Outre-Mer.">
+<style>
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/ibm-plex/6.4.0/css/ibm-plex.min.css');
+
+  :root{
+    --navy:#152238; --navy-2:#1F3252; --cream:#F5EFE0; --cream-2:#EDE4CE;
+    --terracotta:#BE5B31; --terracotta-2:#8F4322; --sauge:#556B4F; --sable:#C9B688; --ink:#241F17;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{ background:var(--cream); color:var(--ink); font-family: Calibri,'Segoe UI','IBM Plex Sans',sans-serif; line-height:1.55; }
+  .mono{ font-family:'IBM Plex Mono','Courier New',monospace; letter-spacing:0.02em; }
+  h1,h2,h3{ font-family:Georgia,'Times New Roman',serif; margin:0; color:var(--navy); }
+
+  .masthead{
+    background: radial-gradient(circle at 85% -10%, rgba(190,91,49,0.35), transparent 45%), linear-gradient(180deg, var(--navy) 0%, var(--navy-2) 100%);
+    color:var(--cream); padding:60px 8vw 44px; position:relative; overflow:hidden;
+  }
+  .masthead::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:6px;
+    background:repeating-linear-gradient(90deg, var(--terracotta) 0 28px, var(--sauge) 28px 56px, var(--sable) 56px 84px); opacity:0.9;
+  }
+  .eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.18em; text-transform:uppercase; color:var(--sable); margin-bottom:16px; }
+  .masthead h1{ color:var(--cream); font-size:clamp(30px,4.2vw,50px); line-height:1.1; max-width:16ch; }
+  .masthead .sub{ max-width:680px; margin-top:18px; font-size:15.5px; color:rgba(245,239,224,0.85); }
+  .navlinks{ margin-top:24px; display:flex; gap:14px; flex-wrap:wrap; }
+  .navlinks a{ font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--sable); text-decoration:none; border:1px solid rgba(201,182,136,0.4); padding:7px 14px; border-radius:2px; }
+  .navlinks a:hover{ background:rgba(201,182,136,0.12); }
+
+  /* EN BREF */
+  .enbref{ display:flex; gap:0; margin:34px 8vw 0; background:#fff; border:1px solid rgba(36,31,23,0.08); border-radius:8px; overflow:hidden; flex-wrap:wrap; }
+  .enbref-item{ flex:1; min-width:160px; padding:20px 22px; border-right:1px solid rgba(36,31,23,0.08); }
+  .enbref-item:last-child{ border-right:none; }
+  .enbref-item .num{ font-family:Georgia,serif; font-size:26px; color:var(--terracotta-2); }
+  .enbref-item .lbl{ font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.04em; color:rgba(36,31,23,0.6); margin-top:4px; }
+
+  section{ padding:48px 8vw; border-bottom:1px solid rgba(36,31,23,0.08); }
+  .section-note{ max-width:760px; color:rgba(36,31,23,0.72); font-size:14.5px; margin:6px 0 30px; }
+
+  .qa{ background:#fff; border:1px solid rgba(36,31,23,0.08); border-left:4px solid var(--terracotta); border-radius:6px; padding:20px 24px; margin-bottom:16px; }
+  .qa.sauge{ border-left-color:var(--sauge); }
+  .qa.navy{ border-left-color:var(--navy); }
+  .qa .q{ font-family:Georgia,serif; font-size:17px; color:var(--navy); font-weight:bold; margin-bottom:8px; }
+  .qa .q::before{ content:"Q — "; color:var(--terracotta-2); font-family:'IBM Plex Mono',monospace; font-size:13px; }
+  .qa .a{ font-size:14.5px; color:rgba(36,31,23,0.85); }
+  .qa .a::before{ content:"R — "; color:var(--sauge); font-family:'IBM Plex Mono',monospace; font-size:12px; font-weight:bold; }
+
+  .lex-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media(max-width:760px){ .lex-grid{ grid-template-columns:1fr; } }
+
+  .closing{ background:linear-gradient(180deg, var(--navy) 0%, #0F1A2C 100%); color:var(--cream); padding:44px 8vw 34px; }
+  .closing h2{ color:var(--cream); font-size:21px; margin-bottom:12px; }
+  .press-box{ background:rgba(245,239,224,0.08); border:1px solid rgba(201,182,136,0.35); border-radius:6px; padding:20px 24px; margin-top:16px; }
+  .press-box p{ font-size:14px; color:rgba(245,239,224,0.9); margin:0 0 6px; }
+  .footer-note{ font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:rgba(245,239,224,0.6); line-height:1.7; border-top:1px solid rgba(245,239,224,0.15); padding-top:18px; margin-top:26px; }
+  .watermark{ text-align:right; font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:rgba(245,239,224,0.4); margin-top:8px; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">Recherche doctorale · Voix d'Outre-Mer</div>
+  <h1>Le shatta en questions</h1>
+  <p class="sub">Idées reçues, repères essentiels et lexique — pour comprendre rapidement le shatta martiniquais, sans jargon universitaire.</p>
+  <div class="navlinks">
+    <a href="pionniers-shatta.html">← Les pionniers (2008–2017)</a>
+    <a href="styles-shatta.html">Les styles du shatta →</a>
+  </div>
+</header>
+
+<div class="enbref">
+  <div class="enbref-item"><div class="num">2008</div><div class="lbl">Émergence à Volga-Plage, Fort-de-France</div></div>
+  <div class="enbref-item"><div class="num">39</div><div class="lbl">Entretiens du corpus de recherche (2024–2025)</div></div>
+  <div class="enbref-item"><div class="num">0</div><div class="lbl">Inventeur unique identifié</div></div>
+  <div class="enbref-item"><div class="num">6</div><div class="lbl">Registres non exclusifs identifiés à ce jour</div></div>
+</div>
+
+<section>
+  <div class="section-head">
+    <h2>Idées reçues</h2>
+  </div>
+  <p class="section-note">Trois affirmations qu'on entend souvent sur le shatta, et ce que montrent les entretiens de recherche.</p>
+
+  <div class="qa">
+    <div class="q">Le shatta a-t-il un inventeur ?</div>
+    <div class="a">Les sources concordent pour indiquer que PSK Music est à l'origine de cette nouvelle manière de composer, de poser la basse. Toutefois, plusieurs beatmakers ont contribué à créer ce genre que l'on appelle aujourd'hui « shatta » en se copiant et/ou en s'influençant les uns les autres. Les vidéos publiées sur YouTube à cette époque sont de véritables archives vivantes de cette période.</div>
+  </div>
+
+  <div class="qa sauge">
+    <div class="q">Le shatta est-il une simple copie du dancehall jamaïcain ?</div>
+    <div class="a">Non. Le dancehall jamaïcain est une influence assumée, mais le shatta hybride aussi le bèlè, la biguine, le zouk et d'autres musiques caribéennes (troubadou haïtien, dembow, soca). C'est une recomposition locale, pas une importation telle quelle.</div>
+  </div>
+
+  <div class="qa navy">
+    <div class="q">Le shatta n'a-t-il aucune règle musicale ?</div>
+    <div class="a">Il a une règle, mais négative : pas de rythmique fixe, pas de « kick » obligatoire. Ce qui identifie le genre, selon plusieurs artistes interrogés, c'est un « mood de basse » plus qu'une structure rythmique précise.</div>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <h2>Petit lexique</h2>
+  </div>
+  <p class="section-note">Quelques mots utiles pour suivre les pages de ce dossier.</p>
+
+  <div class="lex-grid">
+    <div class="qa">
+      <div class="q">Qu'est-ce qu'un riddim ?</div>
+      <div class="a">L'instrumentale de base, souvent réutilisée par plusieurs artistes qui posent chacun leur propre texte dessus.</div>
+    </div>
+    <div class="qa sauge">
+      <div class="q">Qu'est-ce que le ti bwa ?</div>
+      <div class="a">Un motif rythmique du bèlè, joué avec des baguettes sur le côté du tambour — une des racines musicales locales du shatta.</div>
+    </div>
+    <div class="qa navy">
+      <div class="q">Qu'est-ce que le rolento ?</div>
+      <div class="a">Une forme de danse apparue lors des « battles » dans les lycées martiniquais, aux débuts du genre.</div>
+    </div>
+    <div class="qa">
+      <div class="q">Qu'est-ce que le « 2 notes » ?</div>
+      <div class="a">Un style d'instrumentale très épurée, réduite à deux ou trois notes — au cœur d'un débat de paternité encore ouvert entre plusieurs pionniers.</div>
+    </div>
+    <div class="qa sauge">
+      <div class="q">Qui est « le massive » ?</div>
+      <div class="a">Le public d'un sound system — celui qu'il faut convaincre pendant une soirée.</div>
+    </div>
+    <div class="qa navy">
+      <div class="q">Qu'est-ce qu'un selecta ?</div>
+      <div class="a">La personne qui anime le sound system : elle choisit et enchaîne les morceaux diffusés.</div>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <h2>Pour la presse</h2>
+  <p style="font-size:14.5px; color:rgba(245,239,224,0.85); max-width:640px;">Ce dossier est issu d'une recherche doctorale en cours. Pour une interview, une vérification d'information ou une demande de citation, contactez l'autrice via Voix d'Outre-Mer.</p>
+  <div class="press-box">
+    <p><b>Contact :</b> [à compléter — adresse ou formulaire de contact du site]</p>
+    <p><b>Merci de citer :</b> Grondin, Noor-Sharina, doctorante en Histoire et Histoire de l'art, Université des Antilles.</p>
+  </div>
+
+  <div class="footer-note">
+    SOURCES · Corpus doctoral d'entretiens (2024–2025), Grondin N.-S.<br>
+    Issu de la thèse en cours : « Le shatta en Martinique : genre, jeunesse et inégalités raciales dans une société postcoloniale (2008–2025) »<br><br>
+    Pour citer cette page : Grondin, Noor-Sharina. « Le shatta en questions ». <i>Voix d'Outre-Mer</i>, 2026.<br><br>
+    © 2026 Noor-Sharina Grondin — Tous droits réservés. Toute reproduction, totale ou partielle, est interdite sans autorisation écrite préalable de l'autrice.
+    <div class="watermark">Noor-Sharina Grondin</div>
+  </div>
+</div>
+
+</body>
+</html>

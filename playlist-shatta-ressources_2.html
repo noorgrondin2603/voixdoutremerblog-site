@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ressources · Voix d'Outre-Mer</title>
+<style>
+  :root {
+    --navy: #1C2D4F;
+    --cream: #F4F1E8;
+    --terracotta: #C1633D;
+    --sage: #8A9A82;
+    --text-muted: #5B6472;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--navy);
+  }
+
+  a { color: inherit; }
+
+  /* ---------- Header / navigation du site ---------- */
+  header.site-header {
+    background: var(--navy);
+    color: var(--cream);
+  }
+
+  .header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .site-logo {
+    font-weight: 700;
+    font-size: 17px;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+  }
+
+  nav.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    font-size: 13.5px;
+  }
+
+  nav.site-nav a {
+    text-decoration: none;
+    color: rgba(244, 241, 232, 0.78);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  nav.site-nav a:hover,
+  nav.site-nav a:focus-visible {
+    color: var(--cream);
+  }
+
+  nav.site-nav a.active {
+    color: var(--cream);
+    border-bottom-color: var(--terracotta);
+  }
+
+  /* ---------- Fil d'ariane / en-tête de section ---------- */
+  .page-head {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 8px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .breadcrumb {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  /* ---------- Bloc ressource (playlist) ---------- */
+  main {
+    padding-bottom: 40px;
+  }
+
+  .resource-block {
+    max-width: 720px;
+    margin: 16px auto 0;
+    width: calc(100% - 40px);
+    background: #fff;
+    border: 1px solid rgba(28, 45, 79, 0.12);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(28, 45, 79, 0.06);
+  }
+
+  .resource-header {
+    padding: 24px 28px 16px;
+    border-bottom: 3px solid var(--terracotta);
+  }
+
+  .resource-eyebrow {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 700;
+    margin: 0 0 6px;
+  }
+
+  .resource-header h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    line-height: 1.3;
+  }
+
+  .resource-header p {
+    margin: 0 0 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .resource-header p:last-child { margin-bottom: 0; }
+
+  .embed-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--navy);
+  }
+
+  .embed-wrapper iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .resource-footer {
+    padding: 16px 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .fallback-link {
+    font-size: 13.5px;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terracotta);
+    padding-bottom: 1px;
+  }
+
+  .fallback-link:hover,
+  .fallback-link:focus-visible {
+    color: var(--terracotta);
+  }
+
+  .fallback-link:focus-visible,
+  .embed-wrapper iframe:focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 2px;
+  }
+
+  .tag {
+    font-size: 11.5px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--sage);
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 700;
+  }
+
+  /* ---------- Footer du site ---------- */
+  footer.site-footer {
+    background: var(--navy);
+    color: rgba(244, 241, 232, 0.85);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-top: 32px;
+  }
+
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 24px 24px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 28px;
+  }
+
+  .footer-inner h4 {
+    color: var(--cream);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+  }
+
+  .footer-inner p {
+    line-height: 1.6;
+    color: rgba(244, 241, 232, 0.72);
+    margin: 0;
+  }
+
+  .footer-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer-inner a {
+    text-decoration: none;
+    color: rgba(244, 241, 232, 0.78);
+  }
+
+  .footer-inner a:hover,
+  .footer-inner a:focus-visible {
+    color: var(--cream);
+  }
+
+  .footer-legal {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 20px 24px 32px;
+    border-top: 1px solid rgba(244, 241, 232, 0.15);
+    font-size: 12px;
+    line-height: 1.7;
+    color: rgba(244, 241, 232, 0.65);
+  }
+
+  .footer-legal a {
+    color: rgba(244, 241, 232, 0.85);
+    text-decoration: underline;
+  }
+
+  @media (max-width: 720px) {
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="https://voixdoutremer-media.com/">Voix d'Outre-Mer</a>
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a href="https://voixdoutremer-media.com/">Accueil</a>
+      <a href="https://voixdoutremer-media.com/a-propos">Qui suis-je</a>
+      <a href="https://voixdoutremer-media.com/recherche">Recherche</a>
+      <a href="https://voixdoutremer-media.com/vision">Vision</a>
+      <a href="https://voixdoutremer-media.com/ligne-editoriale">Ligne éditoriale</a>
+      <a href="https://voixdoutremer-media.com/articles">Articles</a>
+      <a href="https://voixdoutremer-media.com/presse-medias">Presse &amp; médias</a>
+      <a href="https://voixdoutremer-media.com/ressources" class="active" aria-current="page">Ressources</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <p class="breadcrumb">Ressources · Vidéothèque</p>
+</div>
+
+<main id="main-content">
+
+  <div class="resource-block">
+    <div class="resource-header">
+      <p class="resource-eyebrow">Ressource audiovisuelle · 201 vidéos</p>
+      <h2>Du dancehall au shatta <span style="font-weight:400; font-size:0.7em; color:var(--text-muted);">(liste non exhaustive)</span></h2>
+      <p>Cette playlist retrace une histoire sonore du shatta martiniquais : des expérimentations et des sound systems des années 2000, dans le sillage du ragga et de la dancehall martiniquaise, jusqu'aux formes actuelles qui dialoguent avec le rap, la pop et les autres musiques caribéennes.</p>
+      <p>Le shatta est souvent présenté comme un phénomène récent. Il ne l'est pas&nbsp;: son histoire remonte à près de 15 ans, et elle reste encore largement à écrire.</p>
+      <p>Une chanson peut faire danser et être en même temps une archive sociale — sur la jeunesse, le genre, la sexualité, les rapports de classe. C'est ainsi que je travaille sur le shatta depuis plusieurs années, à travers ma thèse et ce projet, Voix d'Outre-Mer.</p>
+      <p>Cette sélection n'est pas exhaustive. Elle propose un premier parcours dans cette histoire, encore en cours d'écriture.</p>
+    </div>
+
+    <div class="embed-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/videoseries?list=PLQiGVjG6Gr10"
+        title="Lecteur YouTube — Du dancehall au shatta, playlist Voix d'Outre-Mer"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <div class="resource-footer">
+      <span class="tag">YouTube</span>
+      <a class="fallback-link"
+         href="https://www.youtube.com/playlist?list=PLQiGVjG6Gr10"
+         target="_blank" rel="noopener noreferrer">
+        Ouvrir la playlist sur YouTube ↗
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>
+      <h4>Voix d'Outre-Mer</h4>
+      <p>Le média qui donne la voix aux musiques et cultures des Outre-mer : histoire, reggae, dancehall, shatta et recherche doctorale.</p>
+    </div>
+    <div>
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="https://voixdoutremer-media.com/">Accueil</a></li>
+        <li><a href="https://voixdoutremer-media.com/a-propos">Qui suis-je</a></li>
+        <li><a href="https://voixdoutremer-media.com/recherche">Recherche</a></li>
+        <li><a href="https://voixdoutremer-media.com/vision">Vision</a></li>
+        <li><a href="https://voixdoutremer-media.com/ligne-editoriale">Ligne éditoriale</a></li>
+        <li><a href="https://voixdoutremer-media.com/articles">Articles</a></li>
+        <li><a href="https://voixdoutremer-media.com/presse-medias">Presse &amp; médias</a></li>
+        <li><a href="https://voixdoutremer-media.com/ressources">Ressources</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:norahdoctorante@gmail.com">norahdoctorante@gmail.com</a></li>
+        <li><a href="https://www.linkedin.com/in/noor-sharina-g-565a65190">LinkedIn</a></li>
+        <li><a href="https://www.researchgate.net/profile/Noor-Sharina-Grondin">ResearchGate</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Suivre</h4>
+      <ul>
+        <li><a href="https://voixdoutremer.medium.com">Medium</a></li>
+        <li><a href="https://www.instagram.com/voixdoutre_mer">Instagram — Voix d'Outre-Mer</a></li>
+        <li><a href="https://www.instagram.com/norah_doctorante">Instagram — @norah_doctorante</a></li>
+        <li><a href="https://youtube.com/@voixdoutre_mer">YouTube</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-legal">
+    © 2026 Noor-Sharina Grondin — Voix d'Outre-Mer. Tous droits réservés.<br>
+    L'ensemble du contenu intellectuel de ce site (textes, articles, analyses, portraits, photographies et identité visuelle) est protégé par le droit d'auteur. Toute reproduction, totale ou partielle, est interdite sans autorisation écrite préalable — voir les <a href="https://voixdoutremer-media.com/mentions-legales">mentions légales</a>.
+  </div>
+</footer>
+
+</body>
+</html>

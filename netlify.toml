@@ -1,0 +1,23 @@
+[[redirects]]
+  from = "https://voixdoutremer-media.com/*"
+  to = "https://sillagessonores.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.voixdoutremer-media.com/*"
+  to = "https://sillagessonores.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://sillagessonores.com/*"
+  to = "https://sillagessonores.fr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.sillagessonores.com/*"
+  to = "https://sillagessonores.fr/:splat"
+  status = 301
+  force = true

@@ -1,2 +1,2 @@
 # voixdoutremerblog-site
-Blog internet "Voix d'Outre-mer"
+Blog internet " Sillages Sonores"

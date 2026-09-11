@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://voixdoutremer-media.com/sitemap.xml
+Sitemap: https://sillagessonores.fr/sitemap.xml

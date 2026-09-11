@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://sillagessonores.fr/*"
+  from = "https://voixdoutremer-media.com/*"
   to = "https://sillagessonores.fr/:splat"
   status = 301
   force = true

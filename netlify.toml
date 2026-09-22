@@ -11,6 +11,26 @@
   force = true
 
 [[redirects]]
+  from = "https://sillagessonores.com/"
+  to = "https://sillagessonores.com/en/"
+  status = 301
+
+[[redirects]]
+  from = "https://www.sillagessonores.com/"
+  to = "https://sillagessonores.com/en/"
+  status = 301
+
+[[redirects]]
+  from = "https://sillagessonores.com/en/*"
+  to = "/en/:splat"
+  status = 200
+
+[[redirects]]
+  from = "https://www.sillagessonores.com/en/*"
+  to = "/en/:splat"
+  status = 200
+
+[[redirects]]
   from = "https://sillagessonores.com/*"
   to = "https://sillagessonores.fr/:splat"
   status = 301

@@ -33,7 +33,7 @@
   "description": "Média consacré aux musiques et cultures des Outre-mer : histoire, reggae, dancehall, shatta et recherche doctorale.",
   "logo": "https://sillagessonores.fr/photo-noor-sharina-grondin.jpg",
   "sameAs": [
-    "https://voixdoutremer.medium.com",
+    "https://sillagessonores.medium.com",
     "https://www.instagram.com/sillagessonores",
     "https://youtube.com/@voixdoutre_mer"
   ],
@@ -140,7 +140,7 @@
 <rect x="590.00" y="14.52" width="5.50" height="50.97" rx="1.5" />
 </svg>
     <div class="hero-actions">
-      <a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener" class="btn btn-primary">Lire le blog sur Medium</a>
+      <a href="https://sillagessonores.medium.com" target="_blank" rel="noopener" class="btn btn-primary">Lire le blog sur Medium</a>
       <a href="ligne-editoriale.html" class="btn btn-outline-light">Découvrir le projet</a>
     </div>
   </div>
@@ -227,7 +227,7 @@
     const clean = text.replace(/<[^>]*>/g, "").replace(/&[^;]+;/g, " ").trim();
     return clean.length > max ? clean.slice(0, max).trimEnd() + "…" : clean;
   }
-  const RSS_URL = encodeURIComponent("https://medium.com/feed/@voixdoutremer");
+  const RSS_URL = encodeURIComponent("https://medium.com/feed/@sillagessonores");
   fetch(`https://api.rss2json.com/v1/api.json?rss_url=${RSS_URL}&count=3`)
     .then(r => r.json())
     .then(data => {
@@ -243,9 +243,9 @@
     })
     .catch(() => {
       const items = [
-        { title: "Portrait d'un pionnier — Vlg Rocki : la liberté comme ligne de conduite", link: "https://voixdoutremer.medium.com/portrait-dun-pionnier-c43e130f510e", tag: "Portrait d'un pionnier", desc: "Artiste indépendant, producteur et ingénieur du son, Vlg Rocki trace depuis 2008 une ligne de conduite unique dans le shatta martiniquais." },
-        { title: "Le bouyon, d'une île à l'autre : histoire d'une musique caribéenne en mouvement", link: "https://voixdoutremer.medium.com/le-bouyon-dune-%C3%AEle-%C3%A0-l-autre-histoire-d-une-musique-carib%C3%A9enne-en-mouvement-168dce976870", tag: "Histoire & culture", desc: "De la Dominique à la Guadeloupe, l'histoire d'un genre musical caribéen qui a traversé les frontières et les générations." },
-        { title: "Madnick, la voix de Dillon et la mémoire du hip-hop martiniquais", link: "https://voixdoutremer.medium.com/madnick-la-voix-de-dillon-et-la-m%C3%A9moire-du-hip-hop-martiniquais-018bcceb68f0", tag: "Portrait d'un pionnier", desc: "Le parcours de Nicolas Nelzi (Madnick), figure du hip-hop martiniquais." }
+        { title: "Portrait d'un pionnier — Vlg Rocki : la liberté comme ligne de conduite", link: "https://sillagessonores.medium.com/portrait-dun-pionnier-c43e130f510e", tag: "Portrait d'un pionnier", desc: "Artiste indépendant, producteur et ingénieur du son, Vlg Rocki trace depuis 2008 une ligne de conduite unique dans le shatta martiniquais." },
+        { title: "Le bouyon, d'une île à l'autre : histoire d'une musique caribéenne en mouvement", link: "https://sillagessonores.medium.com/le-bouyon-dune-%C3%AEle-%C3%A0-l-autre-histoire-d-une-musique-carib%C3%A9enne-en-mouvement-168dce976870", tag: "Histoire & culture", desc: "De la Dominique à la Guadeloupe, l'histoire d'un genre musical caribéen qui a traversé les frontières et les générations." },
+        { title: "Madnick, la voix de Dillon et la mémoire du hip-hop martiniquais", link: "https://sillagessonores.medium.com/madnick-la-voix-de-dillon-et-la-m%C3%A9moire-du-hip-hop-martiniquais-018bcceb68f0", tag: "Portrait d'un pionnier", desc: "Le parcours de Nicolas Nelzi (Madnick), figure du hip-hop martiniquais." }
       ];
       document.getElementById("latest-articles").innerHTML = items.map(i =>
         `<div class="card article-card"><span class="tag">${i.tag}</span><h3>${i.title}</h3><p>${i.desc}</p><a class="read-more" href="${i.link}" target="_blank" rel="noopener">Lire sur Medium →</a></div>`
@@ -395,7 +395,7 @@
         <p style="opacity:0.8; max-width:320px;">Le média qui donne la voix aux musiques et cultures
         des Outre-mer : histoire, reggae, dancehall, shatta et recherche doctorale. Anciennement Voix d'Outre-Mer.</p>
         <ul class="footer-links" style="margin-top:14px;">
-          <li><a href="https://voixdoutremer.medium.com" target="_blank" rel="noopener">Medium</a></li>
+          <li><a href="https://sillagessonores.medium.com" target="_blank" rel="noopener">Medium</a></li>
           <li><a href="https://www.instagram.com/sillagessonores" target="_blank" rel="noopener">Instagram —  Sillages Sonores</a></li>
           <li><a href="https://www.instagram.com/norah_doctorante" target="_blank" rel="noopener">Instagram — @norah_doctorante</a></li>
           <li><a href="https://youtube.com/@voixdoutre_mer" target="_blank" rel="noopener">YouTube</a></li>
